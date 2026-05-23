@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAPPYBIRTHDAYBRIDGET.BIZ</title>
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
     <script src="https://queral.studio/dom-tools.js"></script>
     <style>
         body {
@@ -31,6 +31,14 @@
             align-items: center;
             gap: 0;
         }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links {
+            color: #ffffff;
+            white-space: nowrap;
+        }
         .myspace-header a {
             color: #ffffff;
             text-decoration: none;
@@ -48,6 +56,7 @@
         .nav-right {
             display: flex;
             align-items: center;
+            color: #ffffff;
         }
 
         /* MAIN CONTENT */
@@ -78,10 +87,12 @@
             padding: 4px;
             text-align: center;
         }
-        .profile-pic-container img {
+        .profile-pic-container img.profile-pic {
             display: block;
             width: 100%;
-            height: auto;
+            height: 250px;
+            object-fit: cover;
+            object-position: center top;
         }
         .profile-name {
             font-size: 14px;
@@ -305,8 +316,18 @@
                 max-width: 250px;
                 margin: 0 auto;
             }
+            .myspace-header {
+                overflow: hidden;
+            }
             .nav-right {
                 display: none;
+            }
+            .nav-brand {
+                width: 100%;
+                margin-bottom: 4px;
+            }
+            .nav-links {
+                overflow: hidden;
             }
             .friend-box {
                 width: 75px;
@@ -341,43 +362,16 @@
     <!-- MYSPACE HEADER BAR -->
     <div class="myspace-header">
         <div class="nav-left">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="height:18px; margin-right:6px; vertical-align:middle;"><circle cx="12" cy="8" r="4"/><path d="M12 14c-6 0-8 3-8 5v1h16v-1c0-2-2-5-8-5z"/></svg><span class="f4 b white">BridgetSpace</span>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Home</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Browse</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Search</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Invite</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Film</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Mail</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Blog</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Favorites</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Forum</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Groups</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Events</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Videos</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Music</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Comedy</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Classifieds</a>
+            <div class="nav-brand">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18" style="margin-right:6px; vertical-align:middle;"><circle cx="12" cy="8" r="4"/><path d="M12 14c-6 0-8 3-8 5v1h16v-1c0-2-2-5-8-5z"/></svg><span style="font-size:1.25rem; font-weight:bold; color:#ffffff; margin-right:20px;">BridgeSpace</span>
+            </div>
+            <div class="nav-links">
+            <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Home</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Browse</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Search</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Invite</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Film</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Mail</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Blog</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Favorites</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Forum</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Groups</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Events</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Videos</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Music</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Comedy</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Classifieds</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Games</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Layouts</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Schools</a> &nbsp;|&nbsp; <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Ranked</a>
+            </div>
         </div>
         <div class="nav-right">
-            <a href="#">SignUp</a>
-            <span class="white">&nbsp;|&nbsp;</span>
-            <a href="#">Login</a>
-            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">SignUp</a> | <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET">Login</a>
+            <span style="color:#ffffff;">&nbsp;|&nbsp;</span>
             <a href="#">Help</a>
         </div>
     </div>
@@ -401,7 +395,7 @@
 
                 <!-- PROFILE PICTURE -->
                 <div class="profile-pic-container">
-                    <img src="../2025/images/IMG_3790.jpg" alt="Bridget">
+                    <img src="photos/profile.jpg" alt="Bridget" class="profile-pic">
                     <br>
                     <span style="font-size:10px;">i am the birthday queen</span>
                     <br><br>
@@ -420,7 +414,7 @@
                 <div>
                     <div class="section-header">Contacting Bridget</div>
                     <div class="contact-box">
-                        <a href="mailto:befurlong@gmail.com" class="contact-link">Send Message</a>
+                        <a href="mailto:befurlong@gmail.com?subject=HAPPY%20BIRTHDAY%20BRIDGET" class="contact-link">Send Message</a>
                         <a href="mailto:befurlong@gmail.com" class="contact-link">Add to Friends</a>
                         <a href="mailto:befurlong@gmail.com" class="contact-link">Instant Message</a>
                         <a href="mailto:befurlong@gmail.com" class="contact-link">Add to Group</a>
@@ -438,13 +432,13 @@
                     <div class="section-header">Bridget's Details</div>
                     <div style="background:#fff; padding:4px;">
                         <div class="profile-detail-row"><b>Status:</b> Birthday Queen</div>
-                        <div class="profile-detail-row"><b>Here for:</b> Networking, Friends, Party Invites</div>
-                        <div class="profile-detail-row"><b>Orientation:</b> Birthday</div>
+                        <div class="profile-detail-row"><b>Here for:</b> birthday vibes</div>
+                        <div class="profile-detail-row"><b>Orientation:</b> 35/f/md</div>
                         <div class="profile-detail-row"><b>Hometown:</b> Party Town</div>
                         <div class="profile-detail-row"><b>Body type:</b> Ready to party</div>
-                        <div class="profile-detail-row"><b>Zodiac Sign:</b> Gemini</div>
-                        <div class="profile-detail-row"><b>Smoke/Drink:</b> Only birthday cake / champagne</div>
-                        <div class="profile-detail-row"><b>Education:</b> School of Hard Partying</div>
+                        <div class="profile-detail-row"><b>Zodiac Sign:</b> gidget5991</div>
+                        <div class="profile-detail-row"><b>Smoke/Drink:</b> not right now</div>
+                        <div class="profile-detail-row"><b>Education:</b> UNIVERSITY OF LIFE</div>
                         <div class="profile-detail-row"><b>Income:</b> i get by</div>
                     </div>
                 </div>
@@ -482,13 +476,13 @@
                             <img src="../gifs/gifcities/birthday/CKY5IBQH7V2TB3IPZFZ2R3FS2DCGGM6P.gif" alt="birthday">
                         </div>
                         <div style="overflow:hidden; white-space:nowrap;">
-                            <span class="marquee-text b" style="display:inline-block; color:#ff00ff; font-size:14px;">
+                            <span class="marquee-text" style="display:inline-block; color:#ff00ff; font-size:14px; font-weight:bold;">
                                 *** HAPPY BIRTHDAY BRIDGET 2026!!! *** YOU ARE THE BEST!!! *** PARTY LIKE IT'S YOUR BIRTHDAY (BECAUSE IT IS) ***
                             </span>
                         </div>
                         <br>
-                        <p class="f6">
-                            welcome to my profile, today we're here to talk about my birthday.
+                        <p style="font-size:.875rem;">
+                            welcome to bridget's birthday profile!!!!!!!
                         </p>
 
                         <img src="photos/img_1758.jpg" alt="Bridget">
@@ -497,6 +491,7 @@
                         <div class="divider-row"><img src="../gifs/gifcities/dividers/2TW3SFSN4ZKJV5LRUPHXJJGIYEPHZ26J.gif" alt=""></div>
 
                         <img src="photos/img_1834.jpg" alt="Bridget">
+                        <img src="photos/img_3317.jpg" alt="Bridget">
                         <img src="photos/img_1878.jpg" alt="Bridget">
                         <img src="photos/img_2138.jpg" alt="Bridget">
 
@@ -508,6 +503,7 @@
                         </div>
 
                         <img src="photos/img_2155.jpg" alt="Bridget">
+                        <img src="photos/img_4110.jpg" alt="Bridget">
                         <img src="photos/img_2170.jpg" alt="Bridget">
 
                         <div class="gif-row">
@@ -516,14 +512,12 @@
                             <img src="../gifs/gifcities/obscure/4V63F7TOIYUMLNRBYFM7UGJ6ALG5E6KA.gif" alt="">
                         </div>
 
-                        <img src="photos/img_2199.jpg" alt="Bridget">
-                        <img src="photos/img_2201.jpg" alt="Bridget">
-                        <img src="photos/img_2203.jpg" alt="Bridget">
+                        <img src="photos/img_4344.jpg" alt="Bridget">
+                        <img src="photos/img_4614.jpg" alt="Bridget">
 
                         <div class="divider-row"><img src="../gifs/gifcities/dividers/3L2LSDIMXNSLOWHSQERP7CSHMBNIZCSC.gif" alt=""></div>
 
-                        <img src="photos/img_2236.jpg" alt="Bridget">
-                        <img src="photos/img_2266.jpg" alt="Bridget">
+                        <img src="photos/img_5242.jpg" alt="Bridget">
 
                         <div class="gif-row">
                             <img src="../gifs/gifcities/international/2GTYXT5T3OTLS6MCR3XZRQPKJ7ROQRSC.gif" alt="">
@@ -532,16 +526,14 @@
                             <img src="../gifs/gifcities/international/5KOHMR375ZPDXEVDTL4OLBTFA65XZR4Y.gif" alt="">
                         </div>
 
-                        <img src="photos/img_2269.jpg" alt="Bridget">
-                        <img src="photos/img_2274.jpg" alt="Bridget">
+                        <img src="photos/img_5452.jpg" alt="Bridget">
+                        <img src="photos/img_5516.jpg" alt="Bridget">
 
                         <div class="gif-row">
                             <img src="../gifs/gifcities/international/2EQP32A6QTRPKZW6MNNZNNYQUZ5VXPT3.gif" alt="">
                             <img src="../gifs/gifcities/international/47CNL77YJFRO3CGDPT3D2B5ZJVMTIS73.gif" alt="">
                             <img src="../gifs/gifcities/international/5JXH4T2E7IL2N2IKDRZ5T5ZIJYFFTMSF.gif" alt="">
                         </div>
-
-                        <img src="photos/img_2327.jpg" alt="Bridget">
 
                         <div class="gif-row">
                             <img src="../gifs/gifcities/obscure/2HS63CAGCVC2GV3LXZ37IB2FXJLXQPWH.gif" alt="">
@@ -550,12 +542,14 @@
                         </div>
 
                         <img src="photos/img_2328.jpg" alt="Bridget">
-                        <img src="photos/img_6337.jpg" alt="Bridget">
+                        <img src="photos/img_6809.jpg" alt="Bridget">
 
                         <div class="divider-row"><img src="../gifs/gifcities/dividers/4AHJ7YIAIQSBBJ3NXTXIQZLQRJBADUG3.gif" alt=""></div>
 
                         <img src="photos/img_6583.jpg" alt="Bridget">
+                        <img src="photos/img_7622.jpg" alt="Bridget">
                         <img src="photos/img_6849.jpg" alt="Bridget">
+                        <img src="photos/img_7846.jpg" alt="Bridget">
 
                         <div class="gif-row">
                             <img src="../gifs/gifcities/obscure/2YDSJDFK5QSH66OOX7YDKRHIHX3MNTBA.gif" alt="">
@@ -563,6 +557,7 @@
                             <img src="../gifs/gifcities/obscure/AH2AIWALGBBRQI3A335WP7JBFYHYBHG5.gif" alt="">
                         </div>
 
+                        <img src="photos/img_7942.jpg" alt="Bridget">
                         <img src="photos/img_8078.jpg" alt="Bridget">
 
                         <div class="gif-row">
@@ -572,6 +567,7 @@
                         </div>
 
                         <img src="photos/img_8125.jpg" alt="Bridget">
+                        <img src="photos/img_8238.jpg" alt="Bridget">
                         <img src="photos/img_8183.jpg" alt="Bridget">
 
                         <div class="gif-row">
@@ -582,7 +578,9 @@
                         </div>
 
                         <img src="photos/img_8253.jpg" alt="Bridget">
-                        <img src="photos/img_8853.jpg" alt="Bridget">
+                        <img src="photos/img_8398.jpg" alt="Bridget">
+                        <img src="photos/img_8399.jpg" alt="Bridget">
+                        <img src="photos/img_8720.jpg" alt="Bridget">
 
                         <div class="gif-row">
                             <img src="../gifs/gifcities/international/5X2MBWLYTHAEGGZWZYNGLIOPRFOBPYZ7.gif" alt="">
@@ -591,12 +589,13 @@
                             <img src="../gifs/gifcities/international/DRV5SEOBW3FSXLUWPMNL5YG2YYGPWS3V.gif" alt="">
                         </div>
 
-                        <img src="photos/img_9532.jpg" alt="Bridget">
+                        <img src="photos/img_9259.jpg" alt="Bridget">
 
                         <div class="divider-row"><img src="../gifs/gifcities/dividers/DMSD4UOEQG3AN62TGWB6EAN6MYWQZCVV.gif" alt=""></div>
 
+                        <img src="photos/img_9495.jpg" alt="Bridget">
                         <img src="photos/img_9714.jpg" alt="Bridget">
-                        <img src="photos/img_9753.jpg" alt="Bridget">
+                        <img src="photos/img_9970.jpg" alt="Bridget">
 
                         <div class="gif-row">
                             <img src="../gifs/gifcities/obscure/BG4VM5FICAHR77TIQM4SRJGSLKOCDLCY.gif" alt="">
@@ -605,7 +604,6 @@
                         </div>
 
                         <img src="photos/img_1236.jpg" alt="Bridget">
-                        <img src="photos/img_1260.jpg" alt="Bridget">
 
                         <div class="divider-row"><img src="../gifs/gifcities/dividers/6DZPA7JROEQAFQBCN6A2P4W7TRRKKPOQ.gif" alt=""></div>
 
@@ -619,7 +617,6 @@
                         </div>
 
                         <img src="photos/img_1280.png" alt="Bridget">
-                        <img src="photos/img_1281.png" alt="Bridget">
 
                         <div class="gif-row">
                             <img src="../gifs/gifcities/international/DTHGA6723QPW5AWKDYBESDYKLP6DUNXB.gif" alt="">
@@ -637,7 +634,7 @@
                             <img src="../gifs/gifcities/birthday/MAQXT2TH4QQ64HDTL3OKI4XX4JXHGPHN.gif" alt="" style="width:100px;">
                         </div>
 
-                        <p class="f6 tc b" style="color:#ff00ff; font-size:14px;">
+                        <p style="color:#ff00ff; font-size:14px; text-align:center; font-weight:bold;">
                             LETS GOOOOOOOOO!!!!!!!!!
                         </p>
                         <div class="divider-row"><img src="../gifs/gifcities/dividers/5QLAMXLW4M7VSZZQP4XFQEWRQAQOYMVE.gif" alt=""></div>
@@ -650,11 +647,11 @@
                 <div>
                     <div class="section-header">Who I'd Like to Meet</div>
                     <div class="section-body">
-                        <p class="f6">
+                        <p style="font-size:.875rem;">
                             ANYONE who has momofuku cake. also oprah. also meeting the jubilades again for another trip.
                         </p>
                         <div style="text-align:center;">
-                            <img src="../2025/gifs/dancinggoofy.gif" alt="goofy" width="60">
+                            <img src="../2025/gifs/dancinggoofy.gif" alt="goofy" width="180">
                         </div>
                     </div>
                 </div>
@@ -683,70 +680,40 @@
                         <b>Bridget's Top 8:</b><br><br>
                         <div class="friends-grid">
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4173.jpg" alt="Tom"><br>
+                                <img src="photos/tom.jpg" alt="Tom"><br>
                                 <a href="#">Tom</a>
-                                <span style="font-size:9px; color:#999;">(MySpace OG)</span>
                             </div>
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4208.jpg" alt="CakeBoss420"><br>
+                                <img src="photos/gizmo.jpg" alt="CakeBoss420"><br>
                                 <a href="#">CakeBoss420</a>
                             </div>
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4209.jpg" alt="xXPartyGirlXx"><br>
+                                <img src="photos/wolves/wolf1.jpg" alt="xXPartyGirlXx"><br>
                                 <a href="#">xXPartyGirlXx</a>
                             </div>
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4210.jpg" alt="DJ_BirthdayBeatz"><br>
+                                <img src="photos/wolves/wolf2.jpg" alt="DJ_BirthdayBeatz"><br>
                                 <a href="#">DJ_BirthdayBeatz</a>
                             </div>
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4211.jpg" alt="GlitterQueen99"><br>
+                                <img src="photos/wolves/wolf3.jpg" alt="GlitterQueen99"><br>
                                 <a href="#">GlitterQueen99</a>
                             </div>
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4212.jpg" alt="BalloonAnimal_Steve"><br>
+                                <img src="photos/wolves/wolf4.jpg" alt="BalloonAnimal_Steve"><br>
                                 <a href="#">BalloonAnimal_Steve</a>
                             </div>
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4213.jpg" alt="~*ConfettiDreams*~"><br>
+                                <img src="photos/wolves/wolf5.jpg" alt="~*ConfettiDreams*~"><br>
                                 <a href="#">~*ConfettiDreams*~</a>
                             </div>
                             <div class="friend-box">
-                                <img src="../2025/images/IMG_4262.jpg" alt="PinataSmasher2006"><br>
+                                <img src="photos/wolves/wolf6.jpg" alt="PinataSmasher2006"><br>
                                 <a href="#">PinataSmasher2006</a>
                             </div>
                         </div>
                         <br>
                         <div style="text-align:center;"><a href="#">View All of Bridget's Friends</a></div>
-                    </div>
-                </div>
-
-                <br>
-
-                <!-- EXTENDED FRIENDS -->
-                <div>
-                    <div class="section-header">Bridget's Friend Space</div>
-                    <div class="section-body">
-                        <div class="friends-grid" style="justify-content:center;">
-                            <div class="friend-box">
-                                <img src="../2025/images/IMG_4303.jpg" alt="~LuisTheGreat~"><br>
-                                <a href="#">~LuisTheGreat~</a>
-                            </div>
-                            <div class="friend-box">
-                                <img src="../2025/images/IMG_4311.jpg" alt="MidnightDancer88"><br>
-                                <a href="#">MidnightDancer88</a>
-                            </div>
-                            <div class="friend-box">
-                                <img src="../2025/images/IMG_4346.jpg" alt="SugarRush_Queen"><br>
-                                <a href="#">SugarRush_Queen</a>
-                            </div>
-                        </div>
-                        <br>
-                        <div style="text-align:center;">
-                            <a href="#">[View All Friends]</a> |
-                            <a href="#">[View Top 24]</a> |
-                            <a href="#">[View Top 48]</a>
-                        </div>
                     </div>
                 </div>
 
@@ -765,8 +732,8 @@
                         <div class="comment-box">
                             <div class="comment-inner">
                                 <div class="comment-avatar">
-                                    <img src="../photos/2014/1.jpg" alt=""><br>
-                                    <a href="#" style="font-size:9px;">~LuisTheGreat~</a><br>
+                                    <img src="photos/wolves/wolf1.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">louiethecuban</a><br>
                                     <span style="font-size:9px; color:#999;">May 22, 2026<br>12:01 AM</span>
                                 </div>
                                 <div class="comment-content">
@@ -783,7 +750,7 @@
                         <div class="comment-box">
                             <div class="comment-inner">
                                 <div class="comment-avatar">
-                                    <img src="../photos/2017/wedding.jpg" alt=""><br>
+                                    <img src="photos/wolves/wolf2.jpg" alt=""><br>
                                     <a href="#" style="font-size:9px;">DJ_BirthdayBeatz</a><br>
                                     <span style="font-size:9px; color:#999;">May 21, 2026<br>11:59 PM</span>
                                 </div>
@@ -802,7 +769,7 @@
                         <div class="comment-box">
                             <div class="comment-inner">
                                 <div class="comment-avatar">
-                                    <img src="../photos/2022/1.jpg" alt=""><br>
+                                    <img src="photos/wolves/wolf3.jpg" alt=""><br>
                                     <a href="#" style="font-size:9px;">BalloonAnimal_Steve</a><br>
                                     <span style="font-size:9px; color:#999;">May 21, 2026<br>8:15 PM</span>
                                 </div>
@@ -821,12 +788,12 @@
                         <div class="comment-box">
                             <div class="comment-inner">
                                 <div class="comment-avatar">
-                                    <img src="../photos/tom.jpg" alt="Tom from MySpace"><br>
+                                    <img src="photos/tom.jpg" alt="Tom from MySpace"><br>
                                     <a href="#" style="font-size:9px;">Tom</a><br>
                                     <span style="font-size:9px; color:#999;">May 21, 2026<br>6:00 PM</span>
                                 </div>
                                 <div class="comment-content">
-                                    <p>Hey Bridget! Happy birthday. Throwing it back to 2014. Classic.
+                                    <p>Hey Bridget! Happy birthday.
                                     <br><br>
                                     <img src="../photos/2014/9.jpg" alt="2014">
                                     <br>
@@ -843,7 +810,7 @@
                         <div class="comment-box">
                             <div class="comment-inner">
                                 <div class="comment-avatar">
-                                    <img src="../photos/2025/img_3790.jpg" alt=""><br>
+                                    <img src="photos/wolves/wolf4.jpg" alt=""><br>
                                     <a href="#" style="font-size:9px;">PinataSmasher2006</a><br>
                                     <span style="font-size:9px; color:#999;">May 21, 2026<br>4:30 PM</span>
                                 </div>
@@ -862,7 +829,7 @@
                         <div class="comment-box">
                             <div class="comment-inner">
                                 <div class="comment-avatar">
-                                    <img src="../photos/2025/img_4262.jpg" alt=""><br>
+                                    <img src="photos/wolves/wolf5.jpg" alt=""><br>
                                     <a href="#" style="font-size:9px;">~*ConfettiDreams*~</a><br>
                                     <span style="font-size:9px; color:#999;">May 21, 2026<br>3:15 PM</span>
                                 </div>
@@ -882,8 +849,8 @@
                         <div class="comment-box">
                             <div class="comment-inner">
                                 <div class="comment-avatar">
-                                    <img src="../photos/2015/b.jpg" alt=""><br>
-                                    <a href="#" style="font-size:9px;">~LuisTheGreat~</a><br>
+                                    <img src="photos/wolves/wolf6.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">louiethecuban</a><br>
                                     <span style="font-size:9px; color:#999;">May 21, 2026<br>12:00 PM</span>
                                 </div>
                                 <div class="comment-content">
