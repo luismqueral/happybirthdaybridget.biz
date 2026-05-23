@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BridgetSpace - Bridget's Birthday</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+    <script src="https://queral.studio/dom-tools.js"></script>
+    <style>
+        body {
+            background-color: #b2c9d6;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0;
+            padding: 20px 0;
+        }
+        a {
+            color: #003399;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #ff3300;
+        }
+
+        /* HEADER */
+        .myspace-header {
+            background-color: #003366;
+            padding: 4px 8px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0;
+        }
+        .myspace-header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 11px;
+        }
+        .myspace-header a:hover {
+            text-decoration: underline;
+        }
+        .nav-left {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex: 1;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 650px;
+            margin: 8px auto 0;
+            background-color: #ffffff;
+            padding: 8px;
+        }
+
+        /* TWO COLUMN LAYOUT */
+        .two-col-layout {
+            display: flex;
+            gap: 8px;
+        }
+        .left-col {
+            width: 200px;
+            flex-shrink: 0;
+        }
+        .right-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* PROFILE */
+        .profile-pic-container {
+            border: 2px solid #003366;
+            padding: 4px;
+            text-align: center;
+        }
+        .profile-pic-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .profile-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #003366;
+        }
+        .online-indicator {
+            color: #00cc00;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        .mood-text {
+            font-style: italic;
+            color: #666666;
+        }
+
+        /* SECTIONS */
+        .section-header {
+            background-color: #003366;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 11px;
+            padding: 3px 5px;
+        }
+        .section-header a {
+            color: #ffffff;
+        }
+        .section-body {
+            background-color: #ffffff;
+            padding: 8px;
+        }
+
+        /* CONTACT BOX */
+        .contact-box {
+            background-color: #dee4e8;
+            border: 1px solid #b2c9d6;
+            padding: 4px;
+            text-align: center;
+        }
+        .contact-link {
+            display: block;
+            background-color: #ffcc00;
+            color: #003366;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 2px 4px;
+            margin: 2px 0;
+            border: 1px solid #996600;
+            font-size: 10px;
+        }
+        .contact-link:hover {
+            background-color: #ffdd44;
+            color: #003366;
+        }
+
+        /* PROFILE DETAILS */
+        .profile-detail-row {
+            display: flex;
+            border-bottom: 1px solid #b2c9d6;
+            padding: 2px 4px;
+        }
+        .profile-detail-row b {
+            min-width: 80px;
+        }
+
+        /* INTERESTS */
+        .interest-row {
+            display: flex;
+            border-bottom: 1px solid #cccccc;
+            padding: 3px 5px;
+        }
+        .interest-label {
+            font-weight: bold;
+            color: #003366;
+            width: 80px;
+            flex-shrink: 0;
+        }
+
+        /* FRIENDS */
+        .friends-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .friend-box {
+            text-align: center;
+            width: 90px;
+        }
+        .friend-box img {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border: 1px solid #003366;
+        }
+        .friend-box a {
+            font-size: 10px;
+            display: block;
+        }
+
+        /* COMMENTS */
+        .comment-box {
+            border: 1px solid #b2c9d6;
+            background-color: #ffffff;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        .comment-inner {
+            display: flex;
+            gap: 8px;
+        }
+        .comment-avatar {
+            width: 80px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .comment-avatar img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 1px solid #999;
+        }
+        .comment-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .comment-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* MUSIC PLAYER */
+        .music-player {
+            background-color: #1a1a1a;
+            border: 2px solid #333333;
+            padding: 8px;
+            color: #ffffff;
+            font-size: 10px;
+            margin-bottom: 12px;
+        }
+        .music-player .track-title {
+            color: #66ccff;
+            font-weight: bold;
+        }
+
+        /* PHOTOS */
+        .photo-gallery img[src*="photos/"] {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 8px;
+        }
+        .gif-row {
+            text-align: center;
+            padding: 8px 0;
+        }
+        .gif-row img {
+            width: 80px;
+            height: auto;
+        }
+        .divider-row {
+            text-align: center;
+            padding: 8px 0;
+        }
+        .divider-row img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* FOOTER */
+        .footer {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* ANIMATIONS */
+        .blinking {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .marquee-text {
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* RESPONSIVE */
+        @media screen and (max-width: 700px) {
+            body {
+                padding: 0;
+            }
+            .main-content {
+                margin: 0;
+                max-width: 100%;
+            }
+            .two-col-layout {
+                flex-direction: column;
+            }
+            .left-col {
+                width: 100%;
+            }
+            .profile-pic-container img {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            .nav-right {
+                display: none;
+            }
+            .friend-box {
+                width: 75px;
+            }
+            .friend-box img {
+                width: 60px;
+                height: 60px;
+            }
+            .gif-row img {
+                width: 60px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .comment-inner {
+                flex-direction: column;
+            }
+            .comment-avatar {
+                width: 100%;
+                text-align: left;
+            }
+            .friend-box {
+                width: 65px;
+            }
+            .friend-box img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- MYSPACE HEADER BAR -->
+    <div class="myspace-header">
+        <div class="nav-left">
+            <span class="f4 b white">BridgetSpace</span>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Home</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Browse</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Search</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Invite</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Film</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Mail</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Blog</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Favorites</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Forum</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Groups</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Events</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Videos</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Music</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Comedy</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Classifieds</a>
+        </div>
+        <div class="nav-right">
+            <a href="#">SignUp</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Login</a>
+            <span class="white">&nbsp;|&nbsp;</span>
+            <a href="#">Help</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- MUSIC PLAYER -->
+        <div class="music-player">
+            <span class="track-title">&#9835; initiate birthday song</span><br><br>
+            <audio controls autoplay loop style="width:100%; height:25px;" src="got-to-be-real.mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- TWO COLUMN LAYOUT -->
+        <div class="two-col-layout">
+
+            <!-- LEFT COLUMN -->
+            <div class="left-col">
+
+                <!-- PROFILE PICTURE -->
+                <div class="profile-pic-container">
+                    <img src="2025/images/IMG_3790.jpg" alt="Bridget">
+                    <br>
+                    <span style="font-size:10px;">i am the birthday queen</span>
+                    <br><br>
+                    <span class="profile-name">Bridget's Birthday</span><br>
+                    <span class="online-indicator">&#9679; Online Now!</span><br>
+                    <span class="mood-text">Mood: birthday vibes only</span><br>
+                    <span style="font-size:10px; color:#999999;">Last Login: 5/22/2026</span>
+                    <br><br>
+                    <img src="2025/gifs/happybirthdayglobe2.gif" alt="Happy Birthday" width="60">
+                    <img src="2025/gifs/BBOOP_CELEBRATION.gif" alt="Celebration" width="50">
+                </div>
+
+                <br>
+
+                <!-- CONTACT BOX -->
+                <div>
+                    <div class="section-header">Contacting Bridget</div>
+                    <div class="contact-box">
+                        <a href="mailto:befurlong@gmail.com" class="contact-link">Send Message</a>
+                        <a href="https://www.youtube.com/watch?v=SB5vJKuRBs4" class="contact-link">Add to Friends</a>
+                        <a href="https://www.youtube.com/watch?v=0Bmhjf0rKe8" class="contact-link">Instant Message</a>
+                        <a href="https://www.youtube.com/watch?v=j5a0jTc9S10" class="contact-link">Add to Group</a>
+                        <a href="https://www.youtube.com/watch?v=G4Sn91t1V4g" class="contact-link">Forward to Friend</a>
+                        <a href="https://www.youtube.com/watch?v=Cly5OZEK0oE" class="contact-link">Add to Favorites</a>
+                        <a href="https://www.youtube.com/watch?v=hQLsb7Zm_MI" class="contact-link">Block User</a>
+                        <a href="https://www.youtube.com/watch?v=IHIRCj8bBPE" class="contact-link">Rank User</a>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- PROFILE DETAILS -->
+                <div>
+                    <div class="section-header">Bridget's Details</div>
+                    <div style="background:#fff; padding:4px;">
+                        <div class="profile-detail-row"><b>Status:</b> Birthday Queen</div>
+                        <div class="profile-detail-row"><b>Here for:</b> Networking, Friends, Party Invites</div>
+                        <div class="profile-detail-row"><b>Orientation:</b> Birthday</div>
+                        <div class="profile-detail-row"><b>Hometown:</b> Party Town</div>
+                        <div class="profile-detail-row"><b>Body type:</b> Ready to party</div>
+                        <div class="profile-detail-row"><b>Zodiac Sign:</b> Gemini</div>
+                        <div class="profile-detail-row"><b>Smoke/Drink:</b> Only birthday cake / champagne</div>
+                        <div class="profile-detail-row"><b>Education:</b> School of Hard Partying</div>
+                        <div class="profile-detail-row"><b>Income:</b> $250,000+ (in birthday love)</div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- URL -->
+                <div>
+                    <div class="section-header">Bridget's URL</div>
+                    <div style="background:#fff; padding:4px;">
+                        <a href="#">http://www.bridgetspace.com/bridgetbirthday2026</a>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- DECORATIVE -->
+                <div style="text-align:center;">
+                    <img src="2025/gifs/dancingbear.gif" alt="Dancing Bear" width="60"><br>
+                    <img src="2025/gifs/bee_over_flowers.gif" alt="Bee" width="80">
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-col">
+
+                <!-- ABOUT ME -->
+                <div>
+                    <div class="section-header">About Me</div>
+                    <div class="section-body photo-gallery">
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/birthday/55FJKG4MDY2S5YYZDZHRBQQ6IZDD7LL4.gif" alt="birthday">
+                            <img src="gifs/gifcities/birthday/ACQLNIAJHSJSHR7VIIZY52JJTJIGZ4DL.gif" alt="birthday">
+                            <img src="gifs/gifcities/birthday/CKY5IBQH7V2TB3IPZFZ2R3FS2DCGGM6P.gif" alt="birthday">
+                        </div>
+                        <div style="overflow:hidden; white-space:nowrap;">
+                            <span class="marquee-text b" style="display:inline-block; color:#ff00ff; font-size:14px;">
+                                *** HAPPY BIRTHDAY BRIDGET 2026!!! *** YOU ARE THE BEST!!! *** PARTY LIKE IT'S YOUR BIRTHDAY (BECAUSE IT IS) ***
+                            </span>
+                        </div>
+                        <br>
+                        <p class="f6">
+                            welcome to my profile, today we're here to talk about my birthday.
+                        </p>
+
+                        <img src="photos/2026/img_1758.jpg" alt="Bridget">
+                        <img src="photos/2026/img_1766.jpg" alt="Bridget">
+
+                        <div class="divider-row"><img src="gifs/gifcities/dividers/2TW3SFSN4ZKJV5LRUPHXJJGIYEPHZ26J.gif" alt=""></div>
+
+                        <img src="photos/2026/img_1834.jpg" alt="Bridget">
+                        <img src="photos/2026/img_1878.jpg" alt="Bridget">
+                        <img src="photos/2026/img_2138.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/walking/23EBFQHLVTP6OKVBYV5QSAFJYO3BIS74.gif" alt="">
+                            <img src="gifs/gifcities/walking/42F45IYZK3EXL2X6SIPRZRZPK5TOBWE7.gif" alt="">
+                            <img src="gifs/gifcities/walking/4VTMRZJGLM25WUGJJN2BZLGW7ZTNVPX7.gif" alt="">
+                            <img src="gifs/gifcities/walking/4WGKG4RKGL2FYWA4AUO3JCGMXIFU7O54.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_2155.jpg" alt="Bridget">
+                        <img src="photos/2026/img_2170.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/obscure/2VKV74SGW6CPONSSISWT67KODL6AC3WC.gif" alt="">
+                            <img src="gifs/gifcities/obscure/43G4N5JHK2GBCU4UTSFUQ3NRZL6QJKTN.gif" alt="">
+                            <img src="gifs/gifcities/obscure/4V63F7TOIYUMLNRBYFM7UGJ6ALG5E6KA.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_2199.jpg" alt="Bridget">
+                        <img src="photos/2026/img_2201.jpg" alt="Bridget">
+                        <img src="photos/2026/img_2203.jpg" alt="Bridget">
+
+                        <div class="divider-row"><img src="gifs/gifcities/dividers/3L2LSDIMXNSLOWHSQERP7CSHMBNIZCSC.gif" alt=""></div>
+
+                        <img src="photos/2026/img_2236.jpg" alt="Bridget">
+                        <img src="photos/2026/img_2266.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/international/2GTYXT5T3OTLS6MCR3XZRQPKJ7ROQRSC.gif" alt="">
+                            <img src="gifs/gifcities/international/4NCNYRHQ64U6MLSMZFHR4QCJFZGCOLZQ.gif" alt="">
+                            <img src="gifs/gifcities/international/53QVM54MLOJJM5LSYZLXQ3MRD2A4WHUT.gif" alt="">
+                            <img src="gifs/gifcities/international/5KOHMR375ZPDXEVDTL4OLBTFA65XZR4Y.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_2269.jpg" alt="Bridget">
+                        <img src="photos/2026/img_2274.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/international/2EQP32A6QTRPKZW6MNNZNNYQUZ5VXPT3.gif" alt="">
+                            <img src="gifs/gifcities/international/47CNL77YJFRO3CGDPT3D2B5ZJVMTIS73.gif" alt="">
+                            <img src="gifs/gifcities/international/5JXH4T2E7IL2N2IKDRZ5T5ZIJYFFTMSF.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_2327.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/obscure/2HS63CAGCVC2GV3LXZ37IB2FXJLXQPWH.gif" alt="">
+                            <img src="gifs/gifcities/obscure/53GPJAV3JY63JIECH4IUP6ZY2AJLNDFV.gif" alt="">
+                            <img src="gifs/gifcities/obscure/5VRUL34LCUXHK7D2FGAI2PCZEYDMDQ64.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_2328.jpg" alt="Bridget">
+                        <img src="photos/2026/img_6337.jpg" alt="Bridget">
+
+                        <div class="divider-row"><img src="gifs/gifcities/dividers/4AHJ7YIAIQSBBJ3NXTXIQZLQRJBADUG3.gif" alt=""></div>
+
+                        <img src="photos/2026/img_6583.jpg" alt="Bridget">
+                        <img src="photos/2026/img_6849.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/obscure/2YDSJDFK5QSH66OOX7YDKRHIHX3MNTBA.gif" alt="">
+                            <img src="gifs/gifcities/obscure/4R3GXCU6THAMHJOJOUOURLBV5H7NX22V.gif" alt="">
+                            <img src="gifs/gifcities/obscure/AH2AIWALGBBRQI3A335WP7JBFYHYBHG5.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_8078.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/walking/AQOMQYQ6U3EZTBJ2AG6ZP22P4H3O6IDT.gif" alt="">
+                            <img src="gifs/gifcities/walking/BIF7PKHACS4UADHJ3EH6EPM4Z64ZSYLU.gif" alt="">
+                            <img src="gifs/gifcities/walking/DB746BRVT2RSFUB3HR4Q6VMAOZUHGNYG.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_8125.jpg" alt="Bridget">
+                        <img src="photos/2026/img_8183.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/birthday/GCEKKKJBGDOSHEUYLI5W7W2KBXQPVFNX.gif" alt="">
+                            <img src="gifs/gifcities/birthday/GOIUAHZTMC2UMEPFPMREGFSBYCLAYVF2.gif" alt="">
+                            <img src="gifs/gifcities/birthday/JHEIFL5KAMT7A7XH5A5QQTQTH3K5SMIW.gif" alt="">
+                            <img src="gifs/gifcities/birthday/JJOKFUMX2ZGCAWWUR5VIIP4CQHPIVCTY.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_8253.jpg" alt="Bridget">
+                        <img src="photos/2026/img_8853.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/international/5X2MBWLYTHAEGGZWZYNGLIOPRFOBPYZ7.gif" alt="">
+                            <img src="gifs/gifcities/international/6LUSNCDJQHENPWKRGIRFSUPOGKLQK2PY.gif" alt="">
+                            <img src="gifs/gifcities/international/DBPEWJFLH6QHTYNTK67YW2G56THBQCAT.gif" alt="">
+                            <img src="gifs/gifcities/international/DRV5SEOBW3FSXLUWPMNL5YG2YYGPWS3V.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_9532.jpg" alt="Bridget">
+
+                        <div class="divider-row"><img src="gifs/gifcities/dividers/DMSD4UOEQG3AN62TGWB6EAN6MYWQZCVV.gif" alt=""></div>
+
+                        <img src="photos/2026/img_9714.jpg" alt="Bridget">
+                        <img src="photos/2026/img_9753.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/obscure/BG4VM5FICAHR77TIQM4SRJGSLKOCDLCY.gif" alt="">
+                            <img src="gifs/gifcities/obscure/BNI2NN4L4T6KAMFBCX2TXOJ5QA3KL6YM.gif" alt="">
+                            <img src="gifs/gifcities/obscure/DGD6AQ3MOCF4KSNKVFZV6XJ63LB37Y53.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_1236.jpg" alt="Bridget">
+                        <img src="photos/2026/img_1260.jpg" alt="Bridget">
+
+                        <div class="divider-row"><img src="gifs/gifcities/dividers/6DZPA7JROEQAFQBCN6A2P4W7TRRKKPOQ.gif" alt=""></div>
+
+                        <img src="photos/2026/img_1261.jpg" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/obscure/FNQLQ4JKGOQY6QFRFGE7BLSIUADOR6CB.gif" alt="">
+                            <img src="gifs/gifcities/obscure/GTCNNUXNNLGVNRVPT3ZY7JBB7MUMWXI4.gif" alt="">
+                            <img src="gifs/gifcities/obscure/HMRHEYLPTKQCHSUKXU2AMFPEFKEIMMGT.gif" alt="">
+                            <img src="gifs/gifcities/obscure/DMIJXIWT7GBKUJZKXR3BQN65DDIVINCN.gif" alt="">
+                        </div>
+
+                        <img src="photos/2026/img_1280.png" alt="Bridget">
+                        <img src="photos/2026/img_1281.png" alt="Bridget">
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/international/DTHGA6723QPW5AWKDYBESDYKLP6DUNXB.gif" alt="">
+                            <img src="gifs/gifcities/international/EOOG6624UDQBJUSEXPYX6L5U2GI7VNHF.gif" alt="">
+                            <img src="gifs/gifcities/international/IATYOFQFGZV7HOWEP4WSDJABBBDMXVN4.gif" alt="">
+                            <img src="gifs/gifcities/international/2RAWSYZTZV6752VLJ5D6IOPLQRHMFPDS.gif" alt="">
+                        </div>
+
+                        <div class="divider-row"><img src="gifs/gifcities/dividers/BLVKXVLOXRIEHAZBLYGYNSHP44KDZXWM.gif" alt=""></div>
+
+                        <div class="gif-row">
+                            <img src="gifs/gifcities/birthday/G5M66QRAUQWWGM4QOLQPKZTAYC52XOEN.gif" alt="" style="width:100px;">
+                            <img src="gifs/gifcities/birthday/FY3NYSGCSRLI2IK6JXZKP2TXAF36FHPQ.gif" alt="" style="width:100px;">
+                            <img src="gifs/gifcities/birthday/LN74WJ55UG4DMBMUUUX3GE56HS4OIKU2.gif" alt="" style="width:100px;">
+                            <img src="gifs/gifcities/birthday/MAQXT2TH4QQ64HDTL3OKI4XX4JXHGPHN.gif" alt="" style="width:100px;">
+                        </div>
+
+                        <p class="f6 tc b" style="color:#ff00ff; font-size:14px;">
+                            LETS GOOOOOOOOO!!!!!!!!!
+                        </p>
+                        <div class="divider-row"><img src="gifs/gifcities/dividers/5QLAMXLW4M7VSZZQP4XFQEWRQAQOYMVE.gif" alt=""></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- WHO I'D LIKE TO MEET -->
+                <div>
+                    <div class="section-header">Who I'd Like to Meet</div>
+                    <div class="section-body">
+                        <p class="f6">
+                            ANYONE who has momofuku cake. also oprah. also meeting the jubilades again for another trip.
+                        </p>
+                        <div style="text-align:center;">
+                            <img src="2025/gifs/dancinggoofy.gif" alt="goofy" width="60">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- INTERESTS -->
+                <div>
+                    <div class="section-header">Bridget's Interests</div>
+                    <div style="background:#fff;">
+                        <div class="interest-row"><span class="interest-label">General</span><span>birthdays, being wonderful, hanging out with friends</span></div>
+                        <div class="interest-row"><span class="interest-label">Music</span><span>90s bangers</span></div>
+                        <div class="interest-row"><span class="interest-label">Movies</span><span>no time for movies -- NEXT</span></div>
+                        <div class="interest-row"><span class="interest-label">Television</span><span>call the midwife, love is blind</span></div>
+                        <div class="interest-row"><span class="interest-label">Books</span><span>truly violent true crime and assorted murder mysteries</span></div>
+                        <div class="interest-row"><span class="interest-label">Heroes</span><span>Tom from MySpace, anyone who remembers my birthday without Facebook reminding them</span></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- TOP 8 FRIENDS -->
+                <div>
+                    <div class="section-header">Bridget's Friend Space&nbsp;&nbsp;<span style="font-weight:normal;">(Bridget has <b>2,847</b> friends)</span></div>
+                    <div class="section-body">
+                        <b>Bridget's Top 8:</b><br><br>
+                        <div class="friends-grid">
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4173.jpg" alt="Tom"><br>
+                                <a href="#">Tom</a>
+                                <span style="font-size:9px; color:#999;">(MySpace OG)</span>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4208.jpg" alt="CakeBoss420"><br>
+                                <a href="#">CakeBoss420</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4209.jpg" alt="xXPartyGirlXx"><br>
+                                <a href="#">xXPartyGirlXx</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4210.jpg" alt="DJ_BirthdayBeatz"><br>
+                                <a href="#">DJ_BirthdayBeatz</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4211.jpg" alt="GlitterQueen99"><br>
+                                <a href="#">GlitterQueen99</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4212.jpg" alt="BalloonAnimal_Steve"><br>
+                                <a href="#">BalloonAnimal_Steve</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4213.jpg" alt="~*ConfettiDreams*~"><br>
+                                <a href="#">~*ConfettiDreams*~</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4262.jpg" alt="PinataSmasher2006"><br>
+                                <a href="#">PinataSmasher2006</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div style="text-align:center;"><a href="#">View All of Bridget's Friends</a></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- EXTENDED FRIENDS -->
+                <div>
+                    <div class="section-header">Bridget's Friend Space</div>
+                    <div class="section-body">
+                        <div class="friends-grid" style="justify-content:center;">
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4303.jpg" alt="~LuisTheGreat~"><br>
+                                <a href="#">~LuisTheGreat~</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4311.jpg" alt="MidnightDancer88"><br>
+                                <a href="#">MidnightDancer88</a>
+                            </div>
+                            <div class="friend-box">
+                                <img src="2025/images/IMG_4346.jpg" alt="SugarRush_Queen"><br>
+                                <a href="#">SugarRush_Queen</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div style="text-align:center;">
+                            <a href="#">[View All Friends]</a> |
+                            <a href="#">[View Top 24]</a> |
+                            <a href="#">[View Top 48]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- COMMENTS -->
+                <div>
+                    <div class="section-header">
+                        Bridget's Comments&nbsp;&nbsp;
+                        <span style="font-weight:normal;">(<a href="#" style="color:#ffffff;">Add Comment</a>)</span>
+                    </div>
+                    <div class="section-body">
+                        <a href="#">Displaying 7 of 2,847 comments</a><br><br>
+
+                        <!-- Comment 1 -->
+                        <div class="comment-box">
+                            <div class="comment-inner">
+                                <div class="comment-avatar">
+                                    <img src="photos/2014/1.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">~LuisTheGreat~</a><br>
+                                    <span style="font-size:9px; color:#999;">May 22, 2026<br>12:01 AM</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p>HAPPY BIRTHDAY BABY!!! here's to another year. remember 2014?? look at us then:
+                                    <br><br>
+                                    <img src="photos/2014/2.jpg" alt="2014">
+                                    <br>
+                                    <img src="gifs/gifcities/birthday/AOIXLBGOOWQQI5JFIBPOWYRJYZ52F6PN.gif" alt="" width="60">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2 -->
+                        <div class="comment-box">
+                            <div class="comment-inner">
+                                <div class="comment-avatar">
+                                    <img src="photos/2017/wedding.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">DJ_BirthdayBeatz</a><br>
+                                    <span style="font-size:9px; color:#999;">May 21, 2026<br>11:59 PM</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p>FIRST TO SAY HAPPY BIRTHDAY AT MIDNIGHT!! posting the wedding pic because ICONIC:
+                                    <br><br>
+                                    <img src="photos/2017/wedding-2.jpg" alt="wedding">
+                                    <br>
+                                    <img src="gifs/gifcities/walking/EQLFZ3U5QNB7WC4J7BM7DXKSCNEIYUA3.gif" alt="" width="50">
+                                    <img src="gifs/gifcities/walking/F7BL34IKWGS3MS7TYTLELZPH5Y42V7GC.gif" alt="" width="50">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 3 -->
+                        <div class="comment-box">
+                            <div class="comment-inner">
+                                <div class="comment-avatar">
+                                    <img src="photos/2022/1.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">BalloonAnimal_Steve</a><br>
+                                    <span style="font-size:9px; color:#999;">May 21, 2026<br>8:15 PM</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p>yo bridget -- 2022 throwback time!! look how good we looked:
+                                    <br><br>
+                                    <img src="photos/2022/5.jpg" alt="2022">
+                                    <br>
+                                    <img src="gifs/gifcities/obscure/HYCS3RIQ7FX3A3WGSH3ZLN37FHCQK66Z.gif" alt="" width="60">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 4 -->
+                        <div class="comment-box">
+                            <div class="comment-inner">
+                                <div class="comment-avatar">
+                                    <img src="photos/2014/8.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">Tom</a><br>
+                                    <span style="font-size:9px; color:#999;">May 21, 2026<br>6:00 PM</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p>Hey Bridget! Happy birthday. Throwing it back to 2014. Classic.
+                                    <br><br>
+                                    <img src="photos/2014/9.jpg" alt="2014">
+                                    <br>
+                                    - Tom
+                                    <br>
+                                    <img src="gifs/gifcities/walking/FC25KJO3FSYFOJSLTH2SNT4JT446TMK5.gif" alt="" width="50">
+                                    <img src="gifs/gifcities/birthday/CBNEM4IST2FOLSHVNITMETWKUQCJIZ7B.gif" alt="" width="60">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 5 -->
+                        <div class="comment-box">
+                            <div class="comment-inner">
+                                <div class="comment-avatar">
+                                    <img src="photos/2025/img_3790.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">PinataSmasher2006</a><br>
+                                    <span style="font-size:9px; color:#999;">May 21, 2026<br>4:30 PM</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p>last year was so good!! the vibes were immaculate:
+                                    <br><br>
+                                    <img src="photos/2025/img_4303.jpg" alt="2025">
+                                    <br>
+                                    <img src="gifs/gifcities/birthday/IHRGGUIKRT7DRWR32WY7WFUOR4BCJGNZ.gif" alt="" width="80">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 6 -->
+                        <div class="comment-box">
+                            <div class="comment-inner">
+                                <div class="comment-avatar">
+                                    <img src="photos/2025/img_4262.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">~*ConfettiDreams*~</a><br>
+                                    <span style="font-size:9px; color:#999;">May 21, 2026<br>3:15 PM</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p>the portrait from last year. STUNNING:
+                                    <br><br>
+                                    <img src="photos/2025/img_4346.jpg" alt="2025">
+                                    <br>
+                                    <img src="gifs/gifcities/international/DABSJ3IAFYYJQCVMCRDSJXNYL27Y7RWY.gif" alt="" width="60">
+                                    <img src="gifs/gifcities/international/F2LGYX5LJ5ZAJJMM6K7MQDWJVFQPOQQT.gif" alt="" width="60">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 7 - final -->
+                        <div class="comment-box">
+                            <div class="comment-inner">
+                                <div class="comment-avatar">
+                                    <img src="photos/2015/b.jpg" alt=""><br>
+                                    <a href="#" style="font-size:9px;">~LuisTheGreat~</a><br>
+                                    <span style="font-size:9px; color:#999;">May 21, 2026<br>12:00 PM</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p>
+                                    <img src="photos/2015/b.jpg" alt="2015">
+                                    <br>
+                                    love you forever. happy birthday.
+                                    <br><br>
+                                    <img src="gifs/gifcities/birthday/5PPK6DVBYQC2NZQZKUVURSNLRSMG4VVB.gif" alt="" width="80">
+                                    <img src="gifs/gifcities/birthday/6DSZEKKTV5TADEXPFHWRMAFCTYY6ZTLH.gif" alt="" width="80">
+                                    <img src="gifs/gifcities/birthday/NUKLC24JLL44RBGL72JLZGBXYX2XONDO.gif" alt="" width="80">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div style="text-align:center;">
+                            <a href="#">[View All 2,847 Comments]</a> |
+                            <a href="#">[Add Comment]</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <img src="2025/gifs/FMGdancingskullline.gif" alt="skulls" style="max-width:400px; width:100%;"><br><br>
+        <span style="font-size:9px; color:#666666;">
+            &copy; 2003-2026 BridgetSpace.com. All Rights Reserved. |
+            <a href="#">Privacy</a> |
+            <a href="#">Terms</a> |
+            <a href="#">Safety Tips</a> |
+            <a href="#">Contact BridgetSpace</a>
+        </span>
+        <br>
+        <span style="font-size:9px; color:#999999;">
+            Profile Views: 14,832 |
+            Page built with love and zero CSS grid.
+        </span>
+        <br><br>
+        <img src="2025/gifs/spinning-email.gif" alt="email" width="30">
+        <span style="font-size:10px;"> Send me an email! </span>
+        <img src="2025/gifs/spinning-email.gif" alt="email" width="30">
+    </div>
+
+    <br><br>
+</body>
+</html>

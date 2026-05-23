@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GifCities Collection Preview</title>
+  <style>
+    body { background: #1a1a1a; color: white; font-family: monospace; padding: 20px; }
+    h2 { color: #ff69b4; border-bottom: 1px solid #333; padding-bottom: 8px; }
+    .grid { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+    .gif-card { background: #2a2a2a; padding: 8px; border-radius: 4px; text-align: center; }
+    .gif-card img { max-width: 150px; max-height: 150px; display: block; margin: 0 auto 6px; }
+    .gif-card code { font-size: 9px; color: #888; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <h1>GifCities Collection</h1>
+  <p>94 gifs sourced from gifcities.org (Internet Archive GeoCities preservation)</p>
+
+  <h2>Walking (10)</h2>
+  <div class="grid" id="walking"></div>
+
+  <h2>International (23)</h2>
+  <div class="grid" id="international"></div>
+
+  <h2>Obscure / Weird (23)</h2>
+  <div class="grid" id="obscure"></div>
+
+  <h2>Birthday / Celebration (18)</h2>
+  <div class="grid" id="birthday"></div>
+
+  <h2>Dividers / Separators (20)</h2>
+  <div class="grid" id="dividers"></div>
+
+  <script>
+    const categories = ['walking', 'international', 'obscure', 'birthday', 'dividers'];
+    categories.forEach(cat => {
+      const container = document.getElementById(cat);
+      // We'll load via a simple fetch of the directory isn't possible in static,
+      // so just hardcode from the known files
+      fetch(`./${cat}/`).then(r => r.text()).then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const links = [...doc.querySelectorAll('a')].filter(a => a.href.endsWith('.gif'));
+        links.forEach(link => {
+          const name = link.textContent.trim();
+          const card = document.createElement('div');
+          card.className = 'gif-card';
+          card.innerHTML = `<img src="${cat}/${name}" alt="${name}"><code>${name.slice(0,12)}...</code>`;
+          container.appendChild(card);
+        });
+      }).catch(() => {
+        // Fallback: just note to open with a local server
+        container.innerHTML = '<p style="color:#666">Open with a local server (python -m http.server) to see directory listings</p>';
+      });
+    });
+  </script>
+</body>
+</html>
