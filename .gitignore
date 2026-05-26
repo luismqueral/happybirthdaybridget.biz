@@ -4,14 +4,13 @@
 Photos-3-001/
 experiments/
 
-# Raw source photos at root (already optimized in photos/)
+# Raw source photos at root (already optimized in year dirs)
 /IMG_*.JPG
 /IMG_*.jpg
+/IMG_*.HEIC
+/IMG_*.heic
+/IMG_*.PNG
+/mstom_400x400.jpg
 
-# Old year directories at root (content preserved in photos/ and 2025/)
-/2014/
-/2015/
-/2017/
-/2018/
+# Old year directories (too large for git)
 /2020/
-/2022/

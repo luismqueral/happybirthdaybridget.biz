@@ -1,0 +1,316 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* responsive youtube videos */
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@font-face {
+    font-family: "Comic Sans";
+    src: url("fonts/Comic Sans MS.ttf");
+}
+@font-face {
+    font-family: "Comic Sans";
+    src: url("fonts/Comic Sans MS Bold.ttf");
+    font-weight: bold;
+}
+
+
+body {
+    background-image: url(../img/bg.png);
+    margin: 0 15px;
+    font-family: Comic Sans, Comic Sans MS, helvetica, arial, sans-serif;
+}
+
+.img-full-width {
+    width: 100%;
+}
+
+h1 {
+    font-size: 60px;
+    color: #ff00de;
+    text-shadow: 2px 2px 0px rgba(143, 150, 150, 0.6);
+}
+
+h2 {
+    font-size: 35px;
+    color: #ff00de;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 35px;
+    color: #000;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 25px;
+    color: #000;
+    font-weight: normal;
+    margin-top: 15px;
+
+}
+
+.head {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.welcome {
+    text-align: center;
+    max-width: 700px;
+    margin: 10px auto;
+    background-color: yellow;
+    padding: 10px 40px;
+
+}
+
+.photo-intro {
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.photo {
+    text-align: center;
+    max-width: 900px;
+    margin: 135px auto;
+    padding: 0 5px;
+}
+
+.congaline {
+height: 300px;
+}
+
+
+
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+        color: #ff00de;
+    }
+
+    h2 {
+        font-size: 25px;
+        color: #ff00de;
+        font-weight: normal;
+    }
+
+    h3 {
+        font-size: 25px;
+        color: #000;
+        font-weight: normal;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

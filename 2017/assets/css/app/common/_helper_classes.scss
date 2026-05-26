@@ -1,0 +1,30 @@
+/* Helper Classes
+   ========================================================================== */
+
+.alert {
+  color: $col-alert;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.flip-h {
+  @include transform(scaleX(-1));
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.flip-v {
+  @include transform(scaleY(-1));
+  filter: FlipV;
+  -ms-filter: "FlipV";
+}
+
+.hide {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}

@@ -1,0 +1,36 @@
+/* Config
+   ========================================================================== */
+
+// Placeholders
+$col-test: #eee;
+
+// Colors
+$col-alert: #ff0000;
+$col-alt: #999;
+$col-background: #fff;
+$col-blockquote: #76888a;
+$col-default: #080D09;
+$col-link: #000;
+$col-highlight: #BDD9F2;
+$col-hover: #BDD9F2;
+$col-hr: rgba(0,0,0,.15);
+$col-input-border: #3F5F73;
+$col-placeholder: #e9e9e9;
+
+// Branded Colors
+$col-blue: #468EEE;
+
+// Dimensions
+$content-max: 1000px;
+$body-width-max: 900px;
+$body-width-min: 320px;
+$footer-height: 150px;
+
+// Transitions
+$transition-timing: 0.2s;
+$transition-function: ease-in-out;
+$transition-function-dramatic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+//Fonts
+$font-body: Arial, sans-serif;
+$font-heading: Arial, sans-serif;

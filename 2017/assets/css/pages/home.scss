@@ -1,0 +1,26 @@
+/* Homepage Styles
+   ========================================================================== */
+
+   .marquee-container {
+     width:100%;
+     overflow:hidden;
+   }
+
+   .marquee{
+     display:block;
+     position:relative;
+     width: 100%;
+
+     // Different Marquee Speeds
+     &.speed-1{animation:scroll 10s linear infinite !important;}
+     &.speed-2{animation:scroll 7s linear infinite !important;}
+     &.speed-3{animation:scroll 6s linear infinite !important;}
+     &.speed-4{animation:scroll 4s linear infinite !important;}
+     &.speed-5{animation:scroll 2s linear infinite !important;}
+   }
+
+   /* Make it move */
+   @keyframes scroll{
+   0% {left:100%;}
+   100% {left:-100%;}
+   }

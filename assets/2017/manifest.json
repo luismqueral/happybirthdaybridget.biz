@@ -1,0 +1,44 @@
+{
+  "year": 2017,
+  "base_url": "/2017/assets",
+  "cdn_url": null,
+  "audio": {
+    "1.mp3": "2017-audio-001.mp3",
+    "2.mp3": "2017-audio-002.mp3"
+  },
+  "images": {
+    "head.png": "2017-0001.png",
+    "1.jpg": "2017-0002.jpg",
+    "2.jpg": "2017-0003.jpg",
+    "3.jpg": "2017-0004.jpg",
+    "4.jpg": "2017-0005.jpg",
+    "5.jpg": "2017-0006.jpg",
+    "6.jpg": "2017-0007.jpg",
+    "7.jpg": "2017-0008.jpg",
+    "8.jpg": "2017-0009.jpg",
+    "9.jpg": "2017-0010.jpg",
+    "10.jpg": "2017-0011.jpg",
+    "11.jpg": "2017-0012.jpg",
+    "wedding.jpg": "2017-0013.jpg",
+    "wedding-2.jpg": "2017-0014.jpg",
+    "wedding-3.jpg": "2017-0015.jpg",
+    "secret.png": "2017-0016.png",
+    "921.webp": "2017-0017.webp"
+  },
+  "gifs": {
+    "1.gif": "2017-gif-001.gif",
+    "2.gif": "2017-gif-002.gif",
+    "walk-1.gif": "2017-gif-walk-01.gif",
+    "walk-2.gif": "2017-gif-walk-02.gif",
+    "walk-3.gif": "2017-gif-walk-03.gif",
+    "walk-4.gif": "2017-gif-walk-04.gif",
+    "walk-5.gif": "2017-gif-walk-05.gif",
+    "walk-6.gif": "2017-gif-walk-06.gif",
+    "walk-7.gif": "2017-gif-walk-07.gif",
+    "walk-8.gif": "2017-gif-walk-08.gif",
+    "walk-9.gif": "2017-gif-walk-09.gif",
+    "walk-10.gif": "2017-gif-walk-10.gif",
+    "walk-11.gif": "2017-gif-walk-11.gif",
+    "walk-12.gif": "2017-gif-walk-12.gif"
+  }
+}

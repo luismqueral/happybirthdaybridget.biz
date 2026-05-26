@@ -1,0 +1,130 @@
+/* Typography
+   ========================================================================== */
+
+/* ----- Baseline ----- */
+body,
+button,
+input,
+select,
+textarea {
+  color: $col-default;
+  font-size: 18px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0 auto;
+}
+
+html {
+  background-color: $col-background;
+}
+
+/* ----- Links ----- */
+a {
+  color: $col-link;
+  text-decoration: none;
+
+
+  &:visited { }
+
+  &:hover {
+    color: $col-hover;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 1px dotted $col-link;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+/* ----- Body Content ----- */
+
+p {
+  margin: 20px 0;
+  padding: 0;
+  font-family: $font-body;
+  line-height: 1.8;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  color: $col-blockquote;
+  font-size: 16px;
+  font-style: italic;
+  margin: 1em 40px;
+  padding: 10px 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+hr {
+  border: 0 $col-hr solid;
+  border-top-width: 1px;
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: 10px 0;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* ----- Headings ----- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  font-family: $font-heading;
+}
+
+h1 {
+  font-size: 54px;
+  line-height: 69px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 44px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 14px;
+}

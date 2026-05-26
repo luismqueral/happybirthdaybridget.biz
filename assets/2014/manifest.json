@@ -1,0 +1,21 @@
+{
+  "year": 2014,
+  "base_url": "/2014/assets",
+  "cdn_url": null,
+  "audio": {
+    "heyarnold.mp3": "2014-audio-001.mp3"
+  },
+  "images": {
+    "b.jpg": "2014-0001.jpg"
+  },
+  "gifs": {
+    "1.gif": "2014-gif-001.gif",
+    "2.gif": "2014-gif-002.gif",
+    "3.gif": "2014-gif-003.gif",
+    "4.gif": "2014-gif-004.gif",
+    "5.gif": "2014-gif-005.gif",
+    "6.gif": "2014-gif-006.gif",
+    "7.gif": "2014-gif-007.gif",
+    "8.gif": "2014-gif-008.gif"
+  }
+}

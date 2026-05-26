@@ -1,0 +1,10 @@
+/* Transitions
+   ========================================================================== */
+
+a,
+button,
+.button,
+input[type="submit"] {
+  @include transition(color $transition-timing $transition-function);
+  @include transition-property(background-color, border-color, color, opacity);
+}
