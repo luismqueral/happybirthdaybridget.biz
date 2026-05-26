@@ -360,18 +360,20 @@
 </head>
 <body>
 <!-- year-nav -->
-<div style="position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:center;gap:12px;padding:8px 0;background:rgba(255,255,255,0.95);border-bottom:1px solid #ddd;box-sizing:border-box;font-family:-apple-system,system-ui,sans-serif;font-size:14px">
-  <a href="../2014/">2014</a>
-  <a href="../2015/">2015</a>
-  <a href="../2016/">2016</a>
-  <a href="../2017/">2017</a>
-  <a href="../2018/">2018</a>
-  <a href="../2021/">2021</a>
-  <a href="../2022/">2022</a>
-  <a href="../2025/">2025</a>
-  <a href="../2026/">2026</a>
+<div style="position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:center;padding:6px 0;background:#333;box-sizing:border-box;font-family:-apple-system,system-ui,sans-serif;font-size:14px">
+  <select onchange="if(this.value)window.location.href=this.value" style="background:#555;color:#fff;border:1px solid #666;border-radius:4px;padding:4px 12px;font-size:14px;cursor:pointer">
+    <option value="">Year...</option>
+    <option value="../2014/">2014</option>
+    <option value="../2015/">2015</option>
+    <option value="../2016/">2016</option>
+    <option value="../2017/">2017</option>
+    <option value="../2018/">2018</option>
+    <option value="../2021/">2021</option>
+    <option value="../2022/">2022</option>
+    <option value="../2025/">2025</option>
+    <option value="../2026/" selected>2026</option>
+  </select>
 </div>
-
 <div style="height:34px"></div>
 <!-- MYSPACE HEADER BAR -->
     <div class="myspace-header">
